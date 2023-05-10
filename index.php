@@ -10,6 +10,7 @@
 
 <body>
     <h1>Sistema Escolar</h1>
+    <hr>
     <form action="validacaoLogin.php" method="POST">
         <label>E-mail: </label>
         <input type="email" name="email" />
@@ -25,7 +26,9 @@
 </html>
 
 <?php
-if ($_GET['acao'] == 1) {
-    echo "Usuário cadastrado!";
+if (isset($_GET['acao'])) {
+    if ($_GET['acao'] == 1) {
+        echo "Usuário cadastrado!";
+    }
 }
 ?>
