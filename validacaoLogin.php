@@ -2,7 +2,6 @@
 include_once "conexao.php";
 session_start();
 
-
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 $con = new conexao();
