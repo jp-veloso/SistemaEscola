@@ -23,3 +23,9 @@
 </body>
 
 </html>
+
+<?php
+if ($_GET['acao'] == 1) {
+    echo "Usuário cadastrado!";
+}
+?>
