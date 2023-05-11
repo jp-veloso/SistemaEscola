@@ -21,8 +21,6 @@
         <input type="submit" value="Entrar" />
         <a href="cadastroUsuario.php">Cadastrar</a>
     </form>
-
-    <p>Teste</p>
 </body>
 
 </html>
