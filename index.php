@@ -30,5 +30,8 @@ if (isset($_GET['acao'])) {
     if ($_GET['acao'] == 1) {
         echo "Usuário cadastrado!";
     }
+    if ($_GET['acao'] == 2) {
+        echo "Curso cadastrado!";
+    }
 }
 ?>
