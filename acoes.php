@@ -24,7 +24,7 @@ else if ($acao == 2) {
     $sql = "insert into cursos (nome,descricao) values ('$nome','$descricao')";
     $conexao = new conexao();
     $conexao->executar($sql);
-    header("location: visualizarCursos.php?acao=2");
+    header("location: cadastroDisciplina.php?acao=2");
     die();
 }
 
@@ -33,7 +33,9 @@ else if ($acao == 3) {
     $id = $_GET['id'];
 
     $sql = "delete from cursos where id = $id";
+    $sql1 = "delete from disciplinas where id_curso = $id";
     $conexao = new conexao();
+    $conexao->executar($sql1);
     $conexao->executar($sql);
     header("location: visualizarCursos.php?acao=3");
     die();
@@ -49,5 +51,17 @@ else if ($acao == 4) {
     $conexao = new conexao();
     $conexao->executar($sql);
     header("location: visualizarCursos.php?acao=4");
+    die();
+}
+
+// Inserir dados da disciplina
+else if ($acao == 5) {
+    $nome = $_POST['nome'];
+    $id = $_POST['id'];
+
+    $sql = "insert into disciplinas (id,nome,id_curso) values (null,'$nome','$id')";
+    $conexao = new conexao();
+    $conexao->executar($sql);
+    header("location: visualizarCursos.php?acao=5");
     die();
 }

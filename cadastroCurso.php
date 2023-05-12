@@ -24,17 +24,6 @@ $conexao = new conexao();
         <label>Descrição:</label>
         <input type="text" name="descricao">
         <br>
-        <select name="Cursos">
-            <?php
-            $arrCursos = $conexao->executar("select nome from cursos");
-            foreach ($arrCursos as $cursos) {
-            ?>
-                <option value=""><?= $cursos['nome'] ?></option>
-            <?php
-            }
-            ?>
-        </select>
-        <br>
         <input type="submit" value="Enviar">
     </form>
 </body>

@@ -20,6 +20,8 @@ $conexao = new conexao();
     <br>
     <a href="cadastroCurso.php">Cadastrar novo curso</a>
     <br>
+    <a href="cadastroDisciplina.php">Cadastrar nova disciplina</a>
+    <br>
     <br>
     <table>
         <?php
@@ -74,6 +76,8 @@ if (isset($_GET['acao'])) {
         echo "Excluido com sucesso!";
     } else if ($_GET['acao'] == 4) {
         echo "Alterado com sucesso!";
+    } else if ($_GET['acao'] == 5) {
+        echo "Disciplina cadastrada!";
     }
 }
 ?>
