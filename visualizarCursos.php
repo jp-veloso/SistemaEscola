@@ -17,31 +17,48 @@ $conexao = new conexao();
 <body>
     <h2>Visualização de cursos</h2>
     <hr />
+    <br>
     <a href="cadastroCurso.php">Cadastrar novo curso</a>
     <br>
+    <br>
     <table>
-        <tr>
-            <th>ID</th>
-            <th>NOME</th>
-            <th>DESCRIÇÃO</th>
-            <th>ALTERAR</th>
-            <th>EXCLUIR</th>
-        </tr>
         <?php
         $arrCursos = $conexao->executar("select * from cursos");
         foreach ($arrCursos as $cursos) {
         ?>
             <tr>
-                <td><?= $cursos['id'] ?></td>
-                <td><?= $cursos['nome'] ?></td>
-                <td><?= $cursos['descricao'] ?></td>
-                <td>
-                    <a href="">Alterar</a>
-                </td>
-                <td>
-                    <a href="acoes.php?id=<?= $cursos['id'] ?>&acao=3">Excluir</a>
-                </td>
+                <th>ID</th>
+                <th>CURSO</th>
+                <th>DESCRIÇÃO</th>
+                <th>ALTERAR</th>
+                <th>EXCLUIR</th>
             </tr>
+            <tr>
+                <th><?= $cursos['id'] ?></th>
+                <th><?= $cursos['nome'] ?></th>
+                <th><?= $cursos['descricao'] ?></th>
+                <th>
+                    <a href="">Alterar</a>
+                </th>
+                <th>
+                    <a href="acoes.php?id=<?= $cursos['id'] ?>&acao=3">Excluir</a>
+                </th>
+            </tr>
+            <tr>
+                <th>ID</th>
+                <th>DISCIPLINAS</th>
+            </tr>
+            <?php
+            $arrDisciplinas = $conexao->executar("select * from disciplinas where id_curso=$cursos[id]");
+            foreach ($arrDisciplinas as $disciplinas) {
+            ?>
+                <tr>
+                    <td><?= $disciplinas['id'] ?></td>
+                    <td><?= $disciplinas['nome'] ?></td>
+                </tr>
+            <?php
+            }
+            ?>
         <?php
         }
         ?>
