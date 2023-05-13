@@ -9,15 +9,15 @@
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="flex justify-center items-center h-screen bg-gray-900 font-sans">
+<body class="flex justify-center items-center h-screen bg-gray-900">
     <div class="max-w-xs p-12 bg-gray-200 border border-indigo-800 rounded-sm">
         <h1 class="text-2xl font-medium mb-4 font-['Inter']">Sistema Escolar</h1>
-        <form action="validacaoLogin.php" method="POST" class="flex flex-col gap-0">
+        <form action="validacaoLogin.php" method="POST" class="flex flex-col">
             <label class="inline-block mb-1">E-mail: </label>
             <input type="email" name="email" class="border border-gray-300 rounded py-2 px-4 w-full focus:outline-none focus:border-indigo-400 mb-2" placeholder="Seu email"/>
             <label class="inline-block mb-1">Senha: </label>
             <input type="password" name="senha" class="border border-gray-300 rounded py-2 px-4 w-full focus:outline-none focus:border-indigo-400" placeholder="Sua senha"/>
-            <div class="flex gap-x-4 mt-6">
+            <div class="flex justify-between mt-6">
                 <input type="submit" value="Entrar" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 transition duration-200 rounded-lg text-white"/>
                 <a href="cadastroUsuario.php" class="px-4 py-2 border border-indigo-300 transition duration-200 rounded-lg">Cadastrar</a>
             </div>
