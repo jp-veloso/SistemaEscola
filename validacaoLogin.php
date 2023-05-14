@@ -12,7 +12,7 @@ $res = $con->executar($sql);
 if (sizeof($res) > 0) {
     $_SESSION['id'] = $res[0]["id"];
     $_SESSION['nome'] = $res[0]['nome'];
-    header("location: cadastroCurso.php");
+    header("location: visualizarCursos.php");
 } else {
     echo "Usuário e senha inválido!";
 }
