@@ -41,17 +41,34 @@ else if ($acao == 3) {
     die();
 }
 
-//Alterar dados do curso
-else if ($acao == 4) {
-    $nome = $_POST['nome'];
-    $descricao = $_POST['descricao'];
-    $id = $_POST['id'];
+// Alterar dados do curso
+else if ($_GET['acao'] == 4) {
+    $idCurso = $_GET['id'];
 
-    $sql = "update cursos set id='$id', nome='$nome' , descricao=$descricao where id=$id";
-    $conexao = new conexao();
-    $conexao->executar($sql);
-    header("location: visualizarCursos.php?acao=4");
-    die();
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+        $novoNome = $_POST['novoNome'];
+        $novaDescricao = $_POST['novaDescricao'];
+
+        $conexao->executar("UPDATE cursos SET nome = '$novoNome', descricao = '$novaDescricao' WHERE id = $idCurso");
+        
+        header("Location: visualizarCursos.php");
+        exit();
+        
+    } else {
+        $curso = $conexao->executar("SELECT * FROM cursos WHERE id = $idCurso");
+
+        ?>
+        <form method="POST" action="acoes.php?acao=4&id=<?= $idCurso ?>">
+            <label for="novoNome">Novo Nome:</label>
+            <input type="text" name="novoNome" value="<?= isset($curso['nome']) ? $curso['nome'] : '' ?>"><br>
+            <label for="novaDescricao">Nova Descrição:</label>
+            <input type="text" name="novaDescricao" value="<?= isset($curso['descricao']) ? $curso['descricao'] : '' ?>"><br>
+            <input type="submit" value="Alterar">
+            <br>
+            <input id="botao" type="submit" name="Voltar" value="Informações" formaction="visualizarCursos.php">
+        </form>
+        <?php
+    }
 }
 
 // Inserir dados da disciplina
