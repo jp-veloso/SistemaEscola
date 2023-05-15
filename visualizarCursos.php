@@ -40,7 +40,7 @@ $conexao = new conexao();
                 <th><?= $cursos['nome'] ?></th>
                 <th><?= $cursos['descricao'] ?></th>
                 <th>
-                    <a href="">Alterar</a>
+                    <a href="alterarCurso.php?id=<?= $cursos['id'] ?>">Alterar</a>
                 </th>
                 <th>
                     <a href="acoes.php?id=<?= $cursos['id'] ?>&acao=3">Excluir</a>
