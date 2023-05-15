@@ -17,7 +17,7 @@ $conexao = new conexao();
 
 <body class="flex justify-center items-center h-screen bg-gray-900">
     <div class="max-w-xs p-12 bg-gray-200 border border-indigo-800 rounded-sm">
-        <h1 class="text-2xl font-medium mb-4 font-['Inter']">Cadastro de disciplinas</h1>
+        <h1 class="text-2xl font-medium mb-4 font-['Inter']">Cadastrar disciplina</h1>
         <form action="acoes.php?acao=5" method="POST" class="flex flex-col">
             <label class="inline-block mb-1">Nome:</label>
             <input type="text" name="nome" class="border border-gray-300 rounded py-2 px-4 w-full focus:outline-none focus:border-indigo-400 mb-2" placeholder="Seu nome">
