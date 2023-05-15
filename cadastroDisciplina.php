@@ -33,9 +33,14 @@ $conexao = new conexao();
                 ?>
             </select>
             <label class="inline-block ">Selecione o ID do curso</label>
-            <span class="text-xs text-gray-400">35 - Sistemas</span>
-            <span class="text-xs text-gray-400">36 - Medicina</span>
-            <span class="text-xs text-gray-400 mb-2">42 - Educação Fisica</span>
+            <?php
+            $arrCursos = $conexao->executar("select * from cursos");
+            foreach ($arrCursos as $cursos) {
+            ?>
+                <span class="text-xs text-gray-400"><?= $cursos['id'] . " - " . $cursos['nome'] ?></span>
+            <?php
+            }
+            ?>
             <select name="id" class="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-2 px-4 pr-8 rounded leading-tight focus:outline-none focus:border-blue-500">
                 <?php
                 $arrCursos = $conexao->executar("select * from cursos");
