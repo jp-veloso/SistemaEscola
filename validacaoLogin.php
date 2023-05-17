@@ -14,5 +14,5 @@ if (sizeof($res) > 0) {
     $_SESSION['nome'] = $res[0]['nome'];
     header("location: visualizarCursos.php");
 } else {
-    echo "Usuário e senha inválido!";
+    header("location: index.php?acao=2");
 }

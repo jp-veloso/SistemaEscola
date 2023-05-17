@@ -30,7 +30,9 @@
 <?php
 if (isset($_GET['acao'])) {
     if ($_GET['acao'] == 1) {
-        echo '<span class="absolute top-[23%] inline-block bg-green-200 text-green-900 p-3 rounded-lg">Usuário cadastrado!</span>';;
+        echo '<span class="absolute top-[23%] inline-block bg-green-200 text-green-900 p-3 rounded-lg">Usuário cadastrado!</span>';
+    } else if ($_GET['acao'] == 2) {
+        echo '<span class="absolute top-[23%] inline-block bg-green-200 text-green-900 p-3 rounded-lg">Usuário e senha inválidos!</span>';
     }
 }
 ?>
