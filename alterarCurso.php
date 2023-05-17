@@ -18,7 +18,7 @@ $conexao = new conexao();
 
 <body class="flex justify-center items-center h-screen bg-gray-900">
     <div class="max-w-xs p-12 bg-gray-200 border border-indigo-800 rounded-sm">
-        <h1 class="text-2xl font-medium mb-4 font-['Inter']">Alterar curso</h1>
+        <h1 class="text-2xl font-medium mb-4 text-center">Alterar curso</h1>
         <?php
         $id = $_GET['id'];
         ?>

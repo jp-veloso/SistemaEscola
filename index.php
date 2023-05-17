@@ -11,7 +11,7 @@
 
 <body class="flex justify-center items-center h-screen bg-gray-900">
     <div class="max-w-xs p-12 bg-gray-200 border border-indigo-800 rounded-sm">
-        <h1 class="text-2xl font-medium mb-4 font-['Inter']">Sistema Escolar</h1>
+        <h1 class="text-2xl font-medium mb-4 text-center">Sistema Escolar</h1>
         <form action="validacaoLogin.php" method="POST" class="flex flex-col">
             <label class="inline-block mb-1">E-mail: </label>
             <input type="email" name="email" class="border border-gray-300 rounded py-2 px-4 w-full focus:outline-none focus:border-indigo-400 mb-2" placeholder="Seu email" />

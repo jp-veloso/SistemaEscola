@@ -23,6 +23,20 @@ $conexao = new conexao();
         <a class="text-blue-500 hover:text-blue-700" href="cadastroDisciplina.php">Cadastrar nova disciplina</a>
         <br>
         <br>
+        <?php
+        if (isset($_GET['acao'])) {
+            if ($_GET['acao'] == 2) {
+                echo '<span class="bg-green-200 text-green-900 p-3 rounded-lg">Salvo com sucesso!</span>';
+            } else if ($_GET['acao'] == 3) {
+                echo '<span class="bg-green-200 text-green-900 p-3 rounded-lg">Excluído com sucesso!</span>';
+            } else if ($_GET['acao'] == 4) {
+                echo '<span class="bg-green-200 text-green-900 p-3 rounded-lg">Alterado com sucesso!</span>';
+            } else if ($_GET['acao'] == 5) {
+                echo '<span class="bg-green-200 text-green-900 p-3 rounded-lg">Disciplina cadastrado com sucesso!</span>';
+            }
+        }
+        ?>
+        <br><br>
         <table class="min-w-full border border-gray-300">
             <?php
             $arrCursos = $conexao->executar("select * from cursos");
@@ -64,21 +78,8 @@ $conexao = new conexao();
             <?php
             }
             ?>
+        </table>
     </div>
 </body>
 
 </html>
-
-<?php
-if (isset($_GET['acao'])) {
-    if ($_GET['acao'] == 2) {
-        echo "Salvo com sucesso!";
-    } else if ($_GET['acao'] == 3) {
-        echo "Excluido com sucesso!";
-    } else if ($_GET['acao'] == 4) {
-        echo "Alterado com sucesso!";
-    } else if ($_GET['acao'] == 5) {
-        echo "Disciplina cadastrada!";
-    }
-}
-?>
