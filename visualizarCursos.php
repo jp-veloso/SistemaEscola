@@ -18,11 +18,9 @@ $conexao = new conexao();
 <body class="bg-gray-100 text-gray-800 font-sans leading-normal p-10">
     <div class="container mx-auto">
         <h1 class="text-3xl font-bold mb-4">Visualização de cursos</h1>
-        <a class="text-blue-500 hover:text-blue-700" href="cadastroCurso.php">Cadastrar novo curso</a>
-        <br>
-        <a class="text-blue-500 hover:text-blue-700" href="cadastroDisciplina.php">Cadastrar nova disciplina</a>
-        <br>
-        <br>
+        <a class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 transition duration-200 rounded-lg text-white mt-4" href="cadastroCurso.php">Cadastrar novo curso</a>
+        <br><br>
+        <a class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 transition duration-200 rounded-lg text-white mt-4" href="cadastroDisciplina.php">Cadastrar nova disciplina</a>
         <?php
         if (isset($_GET['acao'])) {
             if ($_GET['acao'] == 2) {
